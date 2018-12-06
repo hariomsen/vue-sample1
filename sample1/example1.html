@@ -1,0 +1,48 @@
+<html>
+
+<head>
+
+<body>
+    <div id="app">
+        <p>
+            <h3 v-bind:title='titleText'>{{ message }}</h3>
+            <ul v-if='show'>
+                <li v-for='c in counts'>
+                    {{c.num}}
+                </li>
+            </ul>
+        </p>
+        <button v-on:click='showHide'>Show/Hide</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Numbers from 1 to 10',
+                titleText: 'welcome to my first app',
+                show: false,
+                counts: [
+                    { num: 1 },
+                    { num: 2 },
+                    { num: 3 },
+                    { num: 4 },
+                    { num: 5 },
+                    { num: 6 },
+                    { num: 7 },
+                    { num: 8 },
+                    { num: 9 },
+                    { num: 10 }
+                ]
+            },
+            methods: {
+                showHide: function () {
+                    this.show = !this.show
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
